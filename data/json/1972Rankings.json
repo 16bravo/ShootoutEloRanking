@@ -1,0 +1,65 @@
+[
+  {
+    "ranking": 1,
+    "flag": "IRQ.png",
+    "team": "Iraq",
+    "points": 1321,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 2,
+    "flag": "TAI.png",
+    "team": "Taiwan",
+    "points": 1320,
+    "confederation": "AFC",
+    "ranking_change": -1,
+    "points_change": 0
+  },
+  {
+    "ranking": 3,
+    "flag": "KOR.png",
+    "team": "South Korea",
+    "points": 1318,
+    "confederation": "AFC",
+    "ranking_change": -2,
+    "points_change": -2
+  },
+  {
+    "ranking": 4,
+    "flag": "THA.png",
+    "team": "Thailand",
+    "points": 1301,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 5,
+    "flag": "IND.png",
+    "team": "India",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": -2,
+    "points_change": 0
+  },
+  {
+    "ranking": 5,
+    "flag": "SVI.png",
+    "team": "Vietnam Republic",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": -2,
+    "points_change": 0
+  },
+  {
+    "ranking": 7,
+    "flag": "CAM.png",
+    "team": "Cambodia",
+    "points": 1278,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  }
+]

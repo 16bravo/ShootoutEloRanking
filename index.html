@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+  <title>Penalty Shootout Elo Ranking</title>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <h1 class="mb-4">Penalty Shootout Elo Ranking</h1>
+
+  <label for="yearSelect">Year:</label>
+  <select id="yearSelect" class="form-control">
+  </select>
+
+  <table class="table table-striped" id="myTable">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th style="width: 55px;"></th>
+        <th style="width: 55px;"></th>
+        <th>Team</th>
+        <th>Points</th>
+        <th>Points Change</th>
+        <th>Confed.</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- JSON data will be inserted here -->
+    </tbody>
+  </table>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const yearSelect = document.getElementById('yearSelect');
+    const currentYear = new Date().getFullYear();
+
+    // Add an option for the current year (Last)
+    const lastOption = document.createElement('option');
+    lastOption.value = 'last';
+    lastOption.textContent = 'Last';
+    yearSelect.appendChild(lastOption);
+
+    // Add options for years from 1872 to current year
+    for (let year = currentYear-1; year >= 1967; year--) {
+      const option = document.createElement('option');
+      option.value = year.toString();
+      option.textContent = year.toString();
+      yearSelect.appendChild(option);
+    }
+
+    // Default JSON file path
+    let jsonFilePath = 'data/json/LastRankings.json';
+
+    // Function to load the JSON file
+    async function loadJSON(filePath) {
+      const response = await fetch(filePath);
+      const jsonData = await response.json();
+      return jsonData;
+    }
+
+    // Reference to table body
+    const tableBody = document.getElementById('table-body');
+
+    // Initial JSON loading
+    loadJSON(jsonFilePath).then(jsonData => {
+      // Loops through JSON data and constructs array rows
+      jsonData.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.ranking}</td>
+          <td data-toggle="tooltip" title="${item.ranking_change >= 0 ? '+' : ''}${item.ranking_change}">
+            ${item.ranking_change !== 0 ? `<i class="${item.ranking_change > 0 ? 'text-success' : 'text-danger'} fa fa-chevron-${item.ranking_change > 0 ? 'up style="color=green"' : 'down style="color=red"'}"></i>` : '<i class="fa fa-chevron-right" aria-hidden="true" style="color=gray"></i>'}
+          </td>
+          <td><img src="img/${item.flag}" alt="${item.team}" width="30"></td>
+          <td>${item.team}</td>
+          <td>${item.points}</td>
+          <td>${item.points_change}</td>
+          <td>${item.confederation}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+
+      // Activate DataTables on the array with Select
+      const dataTable = $('#myTable').DataTable({
+        select: true  // Activate Select functionality
+      });
+
+      // Add an event manager to change the year
+      yearSelect.addEventListener('change', function () {
+        const selectedYear = this.value;
+        if (selectedYear === 'last') {
+          jsonFilePath = 'data/json/LastRankings.json';
+        } else {
+          jsonFilePath = `data/json/${selectedYear}Rankings.json`;
+        }
+
+        // Empty existing table
+        dataTable.clear().draw();
+
+        // Load the new JSON and update the table
+        loadJSON(jsonFilePath).then(newJsonData => {
+          newJsonData.forEach(newItem => {
+            const newRow = dataTable.row.add([
+              newItem.ranking,
+              `<td data-toggle="tooltip" title="${newItem.ranking_change >= 0 ? '+' : ''}${newItem.ranking_change}">
+              ${newItem.ranking_change !== 0 ? `<i class="${newItem.ranking_change > 0 ? 'text-success' : 'text-danger'} fa fa-chevron-${newItem.ranking_change > 0 ? 'up style="color=green"' : 'down style="color=red"'}"></i>` : '<i class="fa fa-chevron-right" aria-hidden="true" style="color: gray;"></i>'}
+              </td>`,
+              `<img src="img/${newItem.flag}" alt="${newItem.team}" width="30">`,
+              newItem.team,
+              newItem.points,
+              newItem.points_change,
+              newItem.confederation
+            ]).draw(false).node();
+          });
+        });
+      });
+    });
+  });
+</script>
+</body>
+</html>

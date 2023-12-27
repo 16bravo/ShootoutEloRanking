@@ -1,0 +1,58 @@
+name: JSON Generation
+
+on:
+  workflow_run:
+    workflows: ["DB Update","DB Update Monthly"]
+    types:
+      - completed
+
+jobs:
+  json_gen:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Restore dependency cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run JSON generation script
+        run: |
+          echo "Working Directory: $(pwd)"
+          echo "Files in Current Directory: $(ls -al)"
+          python scripts/json_generation.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.email "c.bravo2@yahoo.fr"
+          git config --global user.name "16bravo"
+          if git diff --quiet -- data/json/; then
+            echo "No changes in data/json directory. Skipping commit."
+          else
+            git add -A data/json
+            git commit -m "Update data/json"
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sauvegarder le cache des dépendances
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}

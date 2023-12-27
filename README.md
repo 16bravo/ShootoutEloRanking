@@ -1,1 +1,1 @@
-# ShootoutEloRanking
+Init README

@@ -1,0 +1,20 @@
+[
+  {
+    "ranking": 1,
+    "flag": "TAI.png",
+    "team": "Taiwan",
+    "points": 1320,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 2,
+    "flag": "IND.png",
+    "team": "India",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  }
+]
