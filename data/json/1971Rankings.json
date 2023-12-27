@@ -1,0 +1,38 @@
+[
+  {
+    "ranking": 1,
+    "flag": "TAI.png",
+    "team": "Taiwan",
+    "points": 1320,
+    "confederation": "AFC",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 1,
+    "flag": "KOR.png",
+    "team": "South Korea",
+    "points": 1320,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 3,
+    "flag": "IND.png",
+    "team": "India",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": -1,
+    "points_change": 0
+  },
+  {
+    "ranking": 3,
+    "flag": "SVI.png",
+    "team": "Vietnam Republic",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  }
+]

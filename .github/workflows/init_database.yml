@@ -1,0 +1,77 @@
+name: DB Initialisation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  init_db:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Restore dependency cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+  
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Check if database exists
+        id: check-db
+        run: |
+            if [ -f data/ShootoutRanking.db ]; then
+              echo "Database exists already. No need for init."
+              echo "::set-output name=init_required::false"
+            else
+              echo "Database does not exist. Init needed."
+              echo "::set-output name=init_required::true"
+            fi
+
+      - name: Install dependencies
+        if: steps.check-db.outputs.init_required == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Create .kaggle directory
+        if: steps.check-db.outputs.init_required == 'true'
+        run: mkdir -p /home/runner/.kaggle
+
+      - name: Set up Kaggle credentials
+        if: steps.check-db.outputs.init_required == 'true'
+        run: echo "$KAGGLE_JSON" > /home/runner/.kaggle/kaggle.json && chmod 600 /home/runner/.kaggle/kaggle.json
+        env:
+          KAGGLE_JSON: ${{ secrets.KAGGLE_JSON }}
+
+      - name: Run initialization script
+        if: steps.check-db.outputs.init_required == 'true'
+        run: python scripts/db_initialisation.py
+
+      - name: Commit changes
+        if: steps.check-db.outputs.init_required == 'true'
+        run: |
+          git config --global user.email "c.bravo2@yahoo.fr"
+            git config --global user.name "16bravo"
+            if git diff --quiet data/ShootoutRanking.db; then
+              echo "No changes in ShootoutRanking.db. Skipping commit."
+            else
+              git add data/ShootoutRanking.db
+              git commit -m "Database Creation"
+              git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+              git push
+            fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sauvegarder le cache des dépendances
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}

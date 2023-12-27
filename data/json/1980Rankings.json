@@ -1,0 +1,389 @@
+[
+  {
+    "ranking": 1,
+    "flag": "GUI.png",
+    "team": "Guinea",
+    "points": 1355,
+    "confederation": "CAF",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 2,
+    "flag": "CZE.png",
+    "team": "Czechoslovakia",
+    "points": 1338,
+    "confederation": "UEFA",
+    "ranking_change": 6,
+    "points_change": 18
+  },
+  {
+    "ranking": 3,
+    "flag": "IDN.png",
+    "team": "Indonesia",
+    "points": 1336,
+    "confederation": "AFC",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 4,
+    "flag": "NGA.png",
+    "team": "Nigeria",
+    "points": 1322,
+    "confederation": "CAF",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 5,
+    "flag": "PAR.png",
+    "team": "Paraguay",
+    "points": 1321,
+    "confederation": "CONMEBOL",
+    "ranking_change": -1,
+    "points_change": 0
+  },
+  {
+    "ranking": 6,
+    "flag": "MYA.png",
+    "team": "Myanmar",
+    "points": 1321,
+    "confederation": "AFC",
+    "ranking_change": -1,
+    "points_change": 0
+  },
+  {
+    "ranking": 7,
+    "flag": "THA.png",
+    "team": "Thailand",
+    "points": 1321,
+    "confederation": "AFC",
+    "ranking_change": -1,
+    "points_change": 0
+  },
+  {
+    "ranking": 8,
+    "flag": "TAI.png",
+    "team": "Taiwan",
+    "points": 1320,
+    "confederation": "AFC",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 8,
+    "flag": "MAU.png",
+    "team": "Mauritius",
+    "points": 1320,
+    "confederation": "CAF",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 8,
+    "flag": "QAT.png",
+    "team": "Qatar",
+    "points": 1320,
+    "confederation": "AFC",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 8,
+    "flag": "KEN.png",
+    "team": "Kenya",
+    "points": 1320,
+    "confederation": "CAF",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 8,
+    "flag": "GAM.png",
+    "team": "Gambia",
+    "points": 1320,
+    "confederation": "CAF",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 13,
+    "flag": "MAS.png",
+    "team": "Malaysia",
+    "points": 1319,
+    "confederation": "AFC",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 14,
+    "flag": "ARG.png",
+    "team": "Argentina",
+    "points": 1318,
+    "confederation": "CONMEBOL",
+    "ranking_change": 0,
+    "points_change": 0
+  },
+  {
+    "ranking": 15,
+    "flag": "MAR.png",
+    "team": "Morocco",
+    "points": 1318,
+    "confederation": "CAF",
+    "ranking_change": 7,
+    "points_change": 21
+  },
+  {
+    "ranking": 16,
+    "flag": "TUN.png",
+    "team": "Tunisia",
+    "points": 1318,
+    "confederation": "CAF",
+    "ranking_change": -14,
+    "points_change": -23
+  },
+  {
+    "ranking": 17,
+    "flag": "PRC.png",
+    "team": "China PR",
+    "points": 1318,
+    "confederation": "AFC",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 18,
+    "flag": "SGP.png",
+    "team": "Singapore",
+    "points": 1318,
+    "confederation": "AFC",
+    "ranking_change": -3,
+    "points_change": 0
+  },
+  {
+    "ranking": 19,
+    "flag": "SYR.png",
+    "team": "Syria",
+    "points": 1317,
+    "confederation": "AFC",
+    "ranking_change": -3,
+    "points_change": 0
+  },
+  {
+    "ranking": 20,
+    "flag": "ALG.png",
+    "team": "Algeria",
+    "points": 1303,
+    "confederation": "CAF",
+    "ranking_change": 3,
+    "points_change": 21
+  },
+  {
+    "ranking": 21,
+    "flag": "IRN.png",
+    "team": "Iran",
+    "points": 1302,
+    "confederation": "AFC",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 22,
+    "flag": "MLI.png",
+    "team": "Mali",
+    "points": 1301,
+    "confederation": "CAF",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 23,
+    "flag": "GHA.png",
+    "team": "Ghana",
+    "points": 1300,
+    "confederation": "CAF",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 24,
+    "flag": "ZAM.png",
+    "team": "Zambia",
+    "points": 1298,
+    "confederation": "CAF",
+    "ranking_change": -17,
+    "points_change": -22
+  },
+  {
+    "ranking": 25,
+    "flag": "IRQ.png",
+    "team": "Iraq",
+    "points": 1298,
+    "confederation": "AFC",
+    "ranking_change": -5,
+    "points_change": 0
+  },
+  {
+    "ranking": 26,
+    "flag": "KOR.png",
+    "team": "South Korea",
+    "points": 1297,
+    "confederation": "AFC",
+    "ranking_change": -5,
+    "points_change": 0
+  },
+  {
+    "ranking": 27,
+    "flag": "CMR.png",
+    "team": "Cameroon",
+    "points": 1282,
+    "confederation": "CAF",
+    "ranking_change": -3,
+    "points_change": 0
+  },
+  {
+    "ranking": 28,
+    "flag": "ITA.png",
+    "team": "Italy",
+    "points": 1281,
+    "confederation": "UEFA",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 29,
+    "flag": "BAN.png",
+    "team": "Bangladesh",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 30,
+    "flag": "KUW.png",
+    "team": "Kuwait",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 30,
+    "flag": "SEN.png",
+    "team": "Senegal",
+    "points": 1280,
+    "confederation": "CAF",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 30,
+    "flag": "TAN.png",
+    "team": "Tanzania",
+    "points": 1280,
+    "confederation": "CAF",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 30,
+    "flag": "UAE.png",
+    "team": "United Arab Emirates",
+    "points": 1280,
+    "confederation": "AFC",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 30,
+    "flag": "MWI.png",
+    "team": "Malawi",
+    "points": 1280,
+    "confederation": "CAF",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 30,
+    "flag": "GER.png",
+    "team": "Germany",
+    "points": 1280,
+    "confederation": "UEFA",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 30,
+    "flag": "MTN.png",
+    "team": "Mauritania",
+    "points": 1280,
+    "confederation": "CAF",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 37,
+    "flag": "NED.png",
+    "team": "Netherlands",
+    "points": 1279,
+    "confederation": "UEFA",
+    "ranking_change": -4,
+    "points_change": 0
+  },
+  {
+    "ranking": 38,
+    "flag": "EGY.png",
+    "team": "Egypt",
+    "points": 1278,
+    "confederation": "CAF",
+    "ranking_change": null,
+    "points_change": null
+  },
+  {
+    "ranking": 39,
+    "flag": "GNB.png",
+    "team": "Guinea-Bissau",
+    "points": 1261,
+    "confederation": "CAF",
+    "ranking_change": -5,
+    "points_change": 0
+  },
+  {
+    "ranking": 40,
+    "flag": "HKG.png",
+    "team": "Hong Kong",
+    "points": 1261,
+    "confederation": "AFC",
+    "ranking_change": -14,
+    "points_change": -19
+  },
+  {
+    "ranking": 41,
+    "flag": "LBY.png",
+    "team": "Libya",
+    "points": 1261,
+    "confederation": "CAF",
+    "ranking_change": -6,
+    "points_change": 0
+  },
+  {
+    "ranking": 42,
+    "flag": "CAM.png",
+    "team": "Cambodia",
+    "points": 1260,
+    "confederation": "AFC",
+    "ranking_change": -6,
+    "points_change": 0
+  },
+  {
+    "ranking": 43,
+    "flag": "IND.png",
+    "team": "India",
+    "points": 1243,
+    "confederation": "AFC",
+    "ranking_change": -6,
+    "points_change": 0
+  }
+]

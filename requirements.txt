@@ -1,0 +1,5 @@
+kaggle == 1.5.16
+pandas == 1.4.4
+pathlib == 1.0.1
+tqdm == 4.64.1
+openpyxl == 3.0.10
