@@ -2,7 +2,7 @@ name: DB Update Monthly
 
 on:
   schedule:
-    - cron: '0 0 28 * *'
+    - cron: '0 0 29 * *'
 
 jobs:
   monthly_update:
